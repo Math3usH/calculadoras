@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Pitágoras</title>
+</head>
+<body>
+    <h1>Calculadora de Pitágoras</h1>
+    <label for="catetoA">Cateto 'a':</label>
+    <input type="number" id="catetoA"><br>
+    <label for="catetoB">Cateto 'b':</label>
+    <input type="number" id="catetoB"><br>
+    <button onclick="calcularPitagoras()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularPitagoras() {
+            const catetoA = parseFloat(document.getElementById('catetoA').value);
+            const catetoB = parseFloat(document.getElementById('catetoB').value);
+
+            if (isNaN(catetoA) || isNaN(catetoB) || catetoA <= 0 || catetoB <= 0) {
+                document.getElementById('resultado').textContent = 'Por favor, insira valores válidos maiores que zero para os catetos.';
+            } else {
+                const hipotenusa = Math.sqrt(catetoA * catetoA + catetoB * catetoB);
+                document.getElementById('resultado').textContent = `Hipotenusa: ${hipotenusa.toFixed(2)}`;
+            }
+        }
+    </script>
+</body>
+</html>

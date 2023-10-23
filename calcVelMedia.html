@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Velocidade Média</title>
+</head>
+<body>
+    <h1>Calculadora de Velocidade Média</h1>
+    <label for="distancia">Distância (em metros):</label>
+    <input type="number" id="distancia"><br>
+    <label for="tempo">Tempo (em segundos):</label>
+    <input type="number" id="tempo"><br>
+    <button onclick="calcularVelocidadeMedia()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularVelocidadeMedia() {
+            const distancia = parseFloat(document.getElementById('distancia').value);
+            const tempo = parseFloat(document.getElementById('tempo').value);
+
+            if (isNaN(distancia) || isNaN(tempo) || distancia < 0 || tempo <= 0) {
+                document.getElementById('resultado').textContent = 'Por favor, insira valores válidos para distância e tempo.';
+            } else {
+                const velocidadeMedia = distancia / tempo;
+                document.getElementById('resultado').textContent = `Velocidade Média: ${velocidadeMedia.toFixed(2)} m/s`;
+            }
+        }
+    </script>
+</body>
+</html>
+Neste exemplo, você pode inserir a distância em metros e o tempo em segundos, e a calculadora calculará a velocidade média em metros por segundo (m/s) usando a fórmula velocidade = distância / tempo. Certifique-se de colocar o código em um arquivo HTML e abri-lo em um navegador da web para usar a calculadora.
+
+
+
+
+

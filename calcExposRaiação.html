@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Exposição à Radiação</title>
+</head>
+<body>
+    <h1>Calculadora de Exposição à Radiação</h1>
+    <label for="dose">Dose de Radiação (em Grays):</label>
+    <input type="number" id="dose"><br>
+    <button onclick="calcularExposicao()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularExposicao() {
+            const dose = parseFloat(document.getElementById('dose').value);
+
+            if (isNaN(dose) || dose < 0) {
+                document.getElementById('resultado').textContent = 'Por favor, insira uma dose válida em Grays.';
+            } else {
+                document.getElementById('resultado').textContent = `Exposição à Radiação: ${dose} Grays`;
+            }
+        }
+    </script>
+</body>
+</html>

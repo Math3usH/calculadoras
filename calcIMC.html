@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de IMC</title>
+</head>
+<body>
+    <h1>Calculadora de IMC (Índice de Massa Corporal)</h1>
+    <label for="peso">Peso (em kg):</label>
+    <input type="number" id="peso"><br>
+    <label for="altura">Altura (em metros):</label>
+    <input type="number" id="altura"><br>
+    <button onclick="calcularIMC()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularIMC() {
+            const peso = parseFloat(document.getElementById('peso').value);
+            const altura = parseFloat(document.getElementById('altura').value);
+
+            if (isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
+                document.getElementById('resultado').textContent = 'Por favor, insira valores válidos para peso e altura.';
+            } else {
+                const imc = peso / (altura * altura);
+                document.getElementById('resultado').textContent = `Seu IMC é: ${imc.toFixed(2)}`;
+            }
+        }
+    </script>
+</body>
+</html>
